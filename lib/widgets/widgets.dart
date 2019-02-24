@@ -53,8 +53,18 @@ class RaiseButtonWidget extends StatelessWidget {
             color: Colors.blueAccent,
             textColor: Colors.white,
             onPressed: !snapshot.hasData ? null : () {
-              print('haha');
+              final snackBar = SnackBar(
+                content: Text('Logging in...'),
+                action: SnackBarAction(
+                  label: 'Cancel',
+                  onPressed: () {
+
+                  },
+                ),
+              );
+              Scaffold.of(context).showSnackBar(snackBar);
             },
+            
         );
       },
     );
